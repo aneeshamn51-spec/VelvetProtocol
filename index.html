@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EzyWeb</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="readingRuler"></div>
+
+<div class="hero-card">
+    <h1>🐙 EzyWeb</h1>
+
+    <p class="tagline">
+        Helping people with ADHD, autism, and dyslexia read and focus more easily.
+    </p>
+
+    <div class="input-choice">
+    <button onclick="showInput('url')">🔗 Website</button>
+    <button onclick="showInput('text')">✍️ Text</button>
+    <button onclick="showInput('image')">🖼️ Image</button>
+</div>
+
+<div id="urlSection" class="input-section">
+    <input type="text" id="urlInput" placeholder="Paste website URL here">
+</div>
+
+<div id="textSection" class="input-section hidden">
+    <textarea id="textInput" placeholder="Paste text here..." rows="5"></textarea>
+</div>
+
+<div id="imageSection" class="input-section hidden">
+    <label for="imageInput" class="upload-icon">
+        🖼️ Upload image with text
+    </label>
+    <input type="file" id="imageInput" accept="image/*" hidden>
+</div>
+
+<button class="main-btn" onclick="processInput()">Simplify</button>
+</div>
+
+<div class="features">
+    <div class="feature-card">🧠 Focus Support</div>
+    <div class="feature-card">📖 Easy Reading</div>
+    <div class="feature-card">🌿 Calm UI</div>
+    <div class="feature-card">🔊 Audio Assist</div>
+</div>
+
+<div class="dropdowns">
+
+    <details>
+        <summary>📖 Reading Tools</summary>
+        <button onclick="increaseFont()">A+</button>
+        <button onclick="decreaseFont()">A-</button>
+        <button onclick="readText()">🔊 Read</button>
+        <button onclick="stopReading()">⛔ Stop</button>
+        <button onclick="toggleSentenceMode()">Sentence Mode</button>
+    </details>
+
+    <details>
+        <summary>🎯 Focus Tools</summary>
+        <button onclick="toggleFocusMode()">Focus Mode</button>
+        <button onclick="toggleReadingRuler()">Reading Ruler</button>
+    </details>
+
+    <details>
+        <summary>🎨 Display Modes</summary>
+        <button onclick="toggleDark()">Dark Mode</button>
+        <button onclick="toggleSpacing()">Readable Spacing</button>
+        <button onclick="toggleCalmMode()">Calm Mode</button>
+    </details>
+
+</div>
+
+<div id="loading" class="loading"></div>
+<div id="message" class="message"></div>
+
+<div class="progress-box">
+    <div id="progressBar"></div>
+</div>
+
+<div id="sentenceBox" class="box sentence-box">
+    <h3>Sentence Mode</h3>
+
+    <p id="sentenceText">Your sentence will appear here...</p>
+    <p id="sentenceCounter">Sentence 0 of 0</p>
+
+    <div class="sentence-buttons">
+        <button onclick="prevSentence()">⬅ Previous</button>
+        <button onclick="nextSentence()">Next ➡</button>
+    </div>
+</div>
+
+<div class="box simple-section">
+    <div class="section-heading">
+        <h3>Simplified Version:</h3>
+        <button class="copy-icon" onclick="copySimplifiedText()" title="Copy simplified text">📋</button>
+    </div>
+
+    <div id="simpleText">Your simplified text will appear here...</div>
+</div>
+
+<div class="box original-section">
+    <h3>Original Text</h3>
+    <p id="text"></p>
+</div>
+
+<footer>
+    EzyWeb • Built for cognitive accessibility
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
