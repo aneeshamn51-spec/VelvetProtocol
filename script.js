@@ -56,7 +56,7 @@ async function processInput() {
     }
 
     try {
-        const response = await fetch("http://localhost:3000/process", {
+        const response = await fetch("https://velvet-protocol-4lee.vercel.app/api/process-link", {
             method: "POST",
             body: formData
         });
