@@ -82,7 +82,7 @@ async function processInput() {
 
     } catch (error) {
         loading.innerText = "";
-        message.innerText = "Backend is not running. Start server.js first.";
+        message.innerText = "Cannot connect to backend.";
         console.log(error);
     }
 }
